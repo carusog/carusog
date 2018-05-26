@@ -6,7 +6,7 @@ import Header from '../components/header'
 import './index.css'
 
 const Layout = ({ children, data }) => (
-  <div>
+  <div className="index-wrapper">
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -16,6 +16,7 @@ const Layout = ({ children, data }) => (
     />
     <Header siteTitle={data.site.siteMetadata.title} />
     <div
+      className="children-wrapper"
       style={{
         margin: '0 auto',
         maxWidth: 960,
@@ -25,6 +26,7 @@ const Layout = ({ children, data }) => (
     >
       {children()}
     </div>
+    <pre>{JSON.stringify(data, null, 4)}</pre>
   </div>
 )
 
