@@ -7,11 +7,11 @@ const IndexPage = ({ data }) => {
     const { edges: posts } = data.allMarkdownRemark
     return (
         <div>
-            {posts.map(({ node: post }) => {
+            {posts.map(({ node: post }, index) => {
                 const { frontmatter } = post
 
                 return (
-                    <div key="{frontmatter.path}">
+                    <div key={frontmatter.path}>
                         <h2>
                             <Link to={frontmatter.path}>
                                 {frontmatter.title}
@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
 // for some reason (formatString: "MMMM DD, YYYY") doesn't work
 export const query = graphql`
     query IndexQuery {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
             totalCount
             edges {
                 node {
