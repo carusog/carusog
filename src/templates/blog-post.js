@@ -7,10 +7,11 @@ const Template = ({ data, location, pathContext }) => {
     const { frontmatter, html } = post
     const { title, date } = frontmatter
     const { next, prev } = pathContext
-
-    console.log('data is:', data);
-    console.log('post is:', post);
-    console.log('frontmatter is:', frontmatter);
+    // const d = new Date(date)
+    // const humanDate = `${d.getUTCDate()}-${d.getUTCMonth()}-${d.getUTCFullYear()}`
+    // console.log('data is:', data);
+    // console.log('post is:', post);
+    // console.log('frontmatter is:', frontmatter);
     console.log('pathContext is:', pathContext);
 
     return (
@@ -51,7 +52,7 @@ export const pageQuery = graphql`
             html
             frontmatter {
                 title
-                date
+                date(formatString: "MMMM DD, YYYY")
                 path
                 tags
                 excerpt

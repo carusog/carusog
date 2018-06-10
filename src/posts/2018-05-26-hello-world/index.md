@@ -1,6 +1,6 @@
 ---
 title: "Hello World"
-date: "2018-05-26 17:26:24"
+date: "2018-05-26T15:26:24.000Z"
 path: "/hello-world"
 tags: ['hello', 'world']
 excerpt: "What's better than keeping conventions for the first post?"

@@ -26,7 +26,6 @@ const IndexPage = ({ data }) => {
     )
 }
 
-// for some reason (formatString: "MMMM DD, YYYY") doesn't work
 export const query = graphql`
     query IndexQuery {
         allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -36,7 +35,7 @@ export const query = graphql`
                     id
                     frontmatter {
                         title
-                        date
+                        date(formatString: "MMMM DD, YYYY")
                         path
                         tags
                         excerpt
