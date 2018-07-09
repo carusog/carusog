@@ -4,11 +4,15 @@
     "version": "1.0.0",
     "author": "Giuseppe Caruso <giuseppe@bonsai-studio.net>",
     "dependencies": {
-        "gatsby": "^1.9.247",
-        "gatsby-link": "^1.6.40",
-        "gatsby-plugin-react-helmet": "^2.0.10",
-        "gatsby-source-filesystem": "^1.5.36",
-        "gatsby-transformer-remark": "^1.7.41",
+        "gatsby": "next",
+        "gatsby-image": "next",
+        "gatsby-link": "next",
+        "gatsby-plugin-react-helmet": "next",
+        "gatsby-plugin-sharp": "next",
+        "gatsby-source-filesystem": "next",
+        "gatsby-transformer-remark": "next",
+        "react": "^16.4.1",
+        "react-dom": "^16.4.1",
         "react-helmet": "^5.2.0"
     },
     "keywords": [
