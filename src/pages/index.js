@@ -1,12 +1,13 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 const IndexPage = ({ data }) => {
     console.log(data)
 
     const { edges: posts } = data.allMarkdownRemark
     return (
-        <div>
+        <Layout>
             {posts.map(({ node: post }, index) => {
                 const { frontmatter } = post
 
@@ -22,7 +23,7 @@ const IndexPage = ({ data }) => {
                     </div>
                 )
             })}
-        </div>
+        </Layout>
     )
 }
 

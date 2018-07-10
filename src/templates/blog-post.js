@@ -1,18 +1,13 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-const Template = ({ data, location, pathContext }) => {
+const Template = ({ data, location, pageContext }) => {
     const { markdownRemark: post } = data
     const { frontmatter, html } = post
     const { title, date } = frontmatter
-    const { next, prev } = pathContext
-    // const d = new Date(date)
-    // const humanDate = `${d.getUTCDate()}-${d.getUTCMonth()}-${d.getUTCFullYear()}`
-    // console.log('data is:', data);
-    // console.log('post is:', post);
-    // console.log('frontmatter is:', frontmatter);
-    console.log('pathContext is:', pathContext);
+    const { next, prev } = pageContext
+    console.log('pageContext is:', pageContext);
 
     return (
         <div>
