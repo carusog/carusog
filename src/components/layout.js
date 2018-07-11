@@ -1,23 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql} from 'gatsby'
 
 import Header from './header'
 // import './index.css'
 
-const query = graphql`
-    query SiteTitleQuery {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-    }
-`
-const Layout = ({ children }) => (
+const Layout = ({ children }) => {
+    // const layoutQuery = graphql`
+    //     query SiteTitleQuery {
+    //         site {
+    //             siteMetadata {
+    //                 title
+    //             }
+    //         }
+    //     }
+    // `
+    return (
     <StaticQuery
-        query={query}
+        // query={layoutQuery}
+        query={graphql`
+            query SiteTitleQuery {
+                site {
+                    siteMetadata {
+                        title
+                    }
+                }
+            }
+        `}
         render={data => (
             <div className="index-wrapper">
                 <Helmet
@@ -42,8 +52,8 @@ const Layout = ({ children }) => (
                 </div>
             </div>
         )}
-    />
-)
+    />)
+ }
 
 Layout.propTypes = {
     children: PropTypes.array
