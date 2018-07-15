@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from '../components/layouts/index'
 
 const IndexPage = ({ data }) => {
     console.log(data)
