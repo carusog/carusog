@@ -12,7 +12,6 @@ module.exports = {
             },
         },
         `gatsby-transformer-remark`,
-        // FIXME: Plugin not working?
         `gatsby-plugin-sass`
     ],
 }
