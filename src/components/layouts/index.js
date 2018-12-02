@@ -7,21 +7,7 @@ import Header from '../header'
 // FIXME: see gatsby config for issues with sass plugin
 import './index.scss'
 // import './index.css'
-
-const Layout = ({ children }) => {
-    // const layoutQuery = graphql`
-    //     query SiteTitleQuery {
-    //         site {
-    //             siteMetadata {
-    //                 title
-    //             }
-    //         }
-    //     }
-    // `
-    return (
-    <StaticQuery
-        // query={layoutQuery}
-        query={graphql`
+        /* query={graphql`
             query SiteTitleQuery {
                 site {
                     siteMetadata {
@@ -29,7 +15,21 @@ const Layout = ({ children }) => {
                     }
                 }
             }
-        `}
+        `} */
+
+const Layout = ({ children }) => {
+    const layoutQuery = graphql`
+        query SiteTitleQuery {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+        }
+    `
+    return (
+    <StaticQuery
+        query={layoutQuery}
         render={data => (
             <div className="index-wrapper">
                 <Helmet
@@ -39,7 +39,9 @@ const Layout = ({ children }) => {
                         { name: 'description', content: 'Sample' },
                         { name: 'keywords', content: 'sample, something' },
                     ]}
-                />
+                >
+                    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200|Source+Serif+Pro" rel="stylesheet" />
+                </Helmet>
                 <Header siteTitle={data.site.siteMetadata.title} />
                 <div
                     className="children-wrapper"
