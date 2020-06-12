@@ -3,8 +3,6 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layouts/index'
 
 const IndexPage = ({ data }) => {
-    console.log(data)
-
     const { edges: posts } = data.allMarkdownRemark
     return (
         <Layout>
