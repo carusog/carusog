@@ -9,17 +9,14 @@ const IndexPage = ({ data }) => {
     return (
         <Layout>
             {posts.map(({ node: post }, index) => {
-                const { frontmatter } = post
-
+                const postMeta = post.frontmatter
                 return (
-                    <div key={frontmatter.path}>
+                    <div key={post.id}>
                         <h2>
-                            <Link to={frontmatter.path}>
-                                {frontmatter.title}
-                            </Link>
+                            <Link to={postMeta.path}>{postMeta.title}</Link>
                         </h2>
-                        <p>{frontmatter.date}</p>
-                        <p>{frontmatter.excerpt}</p>
+                        <p>{postMeta.date}</p>
+                        <p>{postMeta.excerpt}</p>
                     </div>
                 )
             })}
