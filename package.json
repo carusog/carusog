@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Giuseppe Caruso <giuseppe@bonsai-studio.net>",
   "dependencies": {
-    "gatsby": "^2.23.3",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sass": "^2.0.5",
